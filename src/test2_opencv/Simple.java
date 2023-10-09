@@ -1,15 +1,20 @@
 package test2_opencv;
 
-import org.opencv.core.Core;
-import org.opencv.core.Scalar;
-
-import org.opencv.core.Point3; 
-
 import javax.swing.JFrame;
+
+import org.opencv.core.Core;
+import org.opencv.core.CvType;
+import org.opencv.core.Mat;
+import org.opencv.core.Point3;
+import org.opencv.imgcodecs.Imgcodecs;
+import org.opencv.imgproc.Imgproc; 
 
 public class Simple {
 
 	public static void main(String[] args) {
+		 System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+		
+		 Mat m = Imgcodecs.imread("./i.jpeg");
 		 System.out.println("Welcome to opencv" + Core.VERSION);
 		 System.out.println(Core.VERSION_MAJOR); // 3 
 		 System.out.println(Core.VERSION_MINOR); // 3 
