@@ -30,6 +30,8 @@ public class Simple {
 		if (!st) { 
 		 System.out.println("Не удалось сохранить изображение"); 
 		} 
+		
+		CvUtils.showImage(img, "Шлыков С.А.");
 
 	}
 }
