@@ -23,24 +23,23 @@ public class video {
 	public static void main(String[] args) {
 		
 		JFrame window = new JFrame("Просмотр видео"); 
-		window.setSize(1000, 600); 
+		window.setSize(1000, 900); 
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		window.setLocationRelativeTo(null); 
 		JLabel label = new JLabel(); 
 		window.setContentPane(label); 
 		window.setVisible(true); 
 		 
-		VideoCapture capture = new VideoCapture( 
-				 "C:\\Users\\stass\\eclipse-workspace\\video\\src\\test2_opencv\\car_city.avi"); 
+		VideoCapture capture = new VideoCapture(0); 
 		if (!capture.isOpened()) { 
 		 System.out.println("Не удалось открыть видео"); 
 		 return; 
 		};
 		
 		Mat frame = new Mat(); 
-		 BufferedImage img = null; 
-		 while (capture.read(frame)) { 
-		 Imgproc.resize(frame, frame, new Size(960, 540)); 
+		BufferedImage img = null; 
+		while (capture.read(frame)) { 
+		 Imgproc.resize(frame, frame, new Size(900, 900)); 
 		 // Здесь можно вставить код обработки кадра 
 		 img = CvUtils.MatToBufferedImage(frame); 
 		 if (img != null) { 
@@ -55,8 +54,7 @@ public class video {
 		 } catch (InterruptedException e) {} 
 		 } 
 		 System.out.println("Выход"); 
-		 capture.release(); 
-			 
+		 capture.release(); 	 
 
 	}
 }
