@@ -1,4 +1,4 @@
-package test2_opencv;
+package webcam_opencv;
 
 import java.awt.image.BufferedImage; 
 import java.awt.image.DataBufferByte; 
